@@ -9,19 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginDAO {
-    public boolean validate(LoginBean loginBean) throws ClassNotFoundException {//kiem tra dang nhap
-        boolean status = false;//trang thai dang nhap
-
-        Class.forName("com.mysql.cj.jdbc.Driver");
+    public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
+        boolean status = false;
 
         try(Connection conn = JDBCUtils.getConnection();
             PreparedStatement ps = conn.prepareStatement
                     ("SELECT * FROM users WHERE username = ? AND password = ?")){
-            ps.setString(1, loginBean.getUsername());//gan gia tri cho ? thư nhat
-            ps.setString(2, loginBean.getPassword());//gan gia tri cho ? thu hai
+            ps.setString(1, loginBean.getUsername());
+            ps.setString(2, loginBean.getPassword());
             System.out.println(ps);
-            ResultSet rs = ps.executeQuery();//thuc hien tra ve ket qua cua ps
-            status = rs.next();//kiem tra xem rs co chua du lieu
+            ResultSet rs = ps.executeQuery();
+            status = rs.next();
 
         } catch (SQLException e) {
             JDBCUtils.printSQLException(e);

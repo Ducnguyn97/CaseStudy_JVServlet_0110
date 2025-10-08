@@ -10,26 +10,32 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
 </head>
 <body>
 <jsp:include page="../common/header.jsp"></jsp:include>
-<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
-    <h1>Login Form</h1>
-    <form action="<%=request.getContextPath()%>/login" method="post">
+<div class="main-content">
+    <div class="container">
+        <h1>Login Form</h1>
+        <form action="<%=request.getContextPath()%>/login" method="post">
+            <div class="form-group">
+                <label>User Name:</label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
 
-        <div class="form-group">
-            <label for="uname">User Name:</label> <input type="text" class="form-control" id="username" placeholder="User Name" name="username" required>
-        </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
 
-        <div class="form-group">
-            <label for="uname">Password:</label> <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
-        </div>
-
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <c:if test="${not empty error}">
+            <div class="alert alert-danger">${error}</div>
+        </c:if>
+    </div>
 </div>
 <jsp:include page="../common/footer.jsp"></jsp:include>
 </body>

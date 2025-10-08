@@ -14,34 +14,35 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp"></jsp:include>
-<div class="container">
-
-    <h2>User Register Form</h2>
-    <div class="col-md-6 col-md-offset-3">
-        <div class="alert alert-success center" role="alert">
-            <p>${message}</p>
-        </div>
-
+<div class="main-content">
+    <div class="container">
+        <h1>Register Form</h1>
         <form action="<%=request.getContextPath()%>/register" method="post">
 
+            <c:if test="${not empty error}">
+                <div class="alert alert-danger">${error}</div>
+            </c:if>
             <div class="form-group">
-                <label for="uname">First Name:</label> <input type="text" class="form-control" id="uname" placeholder="First Name" name="firstName" required>
+                <label>First Name:</label>
+                <input type="text" name="firstname" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="uname">Last Name:</label> <input type="text" class="form-control" id="uname" placeholder="last Name" name="lastName" required>
+                <label>Last Name:</label>
+                <input type="text" name="lastname" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="uname">User Name:</label> <input type="text" class="form-control" id="username" placeholder="User Name" name="username" required>
+                <label>User Name:</label>
+                <input type="text" name="username" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="uname">Password:</label> <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                <label>Password:</label>
+                <input type="password" name="password" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-
+            <button type="submit" class="btn btn-success">Sign up</button>
         </form>
     </div>
 </div>

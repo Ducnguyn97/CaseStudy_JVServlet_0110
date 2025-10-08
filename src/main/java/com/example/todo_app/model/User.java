@@ -1,7 +1,6 @@
 package com.example.todo_app.model;
 
-public class User implements java.io.Serializable{
-    private static final long serialVersionUID = 1L;
+public class User {
     private String firstName;
     private String lastName;
     private String username;

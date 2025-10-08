@@ -6,20 +6,31 @@
   To change this template use File | Settings | File Templates.
 --%>
 <style>
-    .footer {
+    .app-footer {
+        background-color: #0056d2; /* Xanh đậm */
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Bóng mờ phía trên */
         position: fixed;
         bottom: 0;
-        width:100%;
-        height: 40px;
-        background-color: tomato;
-    }
+        width: 100%;
 
+    }
+    .app-footer a {
+        color: #ffd700;
+        text-decoration: none;
+    }
+    .app-footer a:hover {
+        text-decoration: underline;
+    }
 </style>
 
-<footer class="footer font-small black">
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="color: white">© 2019 Copyright:
-        <a href="https://www.javaguides.net/" > <strong> Java Guides </strong></a>
+<footer class="app-footer">
+    <div>
+        2025 CASE STUDY MODULE 3:
+        <a href="#"><strong>CODEGYM</strong></a>
     </div>
 </footer>
 <!-- Footer -->

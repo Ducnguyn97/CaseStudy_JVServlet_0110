@@ -6,15 +6,22 @@
   To change this template use File | Settings | File Templates.
 --%>
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark"
-         style="background-color: tomato">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm px-4">
         <div>
-            <a href="https://www.javaguides.net" class="navbar-brand"> Todo App</a>
+            <a href="${pageContext.request.contextPath}/" class="navbar-brand d-flex align-items-center">
+                <img src="${pageContext.request.contextPath}/img/logo_codegym.jpg"
+                     alt="Logo" width="30" height="30" class="mr-2 rounded-circle">
+                <span>Todo App</span>
+            </a>
         </div>
 
-        <ul class="navbar-nav navbar-collapse justify-content-end">
-            <li><a href="<%= request.getContextPath() %>/login" class="nav-link">Login</a></li>
-            <li><a href="<%= request.getContextPath() %>/register" class="nav-link">Sign up</a></li>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="<%= request.getContextPath() %>/login" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="<%= request.getContextPath() %>/register" class="nav-link">Sign up</a>
+            </li>
         </ul>
     </nav>
 </header>

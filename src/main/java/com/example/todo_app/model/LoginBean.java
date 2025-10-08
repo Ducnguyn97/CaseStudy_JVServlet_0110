@@ -1,7 +1,6 @@
 package com.example.todo_app.model;
 
-public class LoginBean implements java.io.Serializable {
-    private static final long serialVersionUID = 1L;
+public class LoginBean  {
     String username;
     String password;
 

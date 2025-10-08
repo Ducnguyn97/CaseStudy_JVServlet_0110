@@ -6,8 +6,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
 /*
-DB_URL: jdbc:mysql://localhost:3306/todo_management?useSSL=false duong dan ket noi MySQL
-USER: root, Password: ten dang nhapj va mat khau
+DB_URL: jdbc:mysql://localhost:3306/todo_management?useSSL=false MySQL connection path
+USER: root, Password
  */
 
 public class JDBCUtils {
@@ -18,7 +18,8 @@ public class JDBCUtils {
     public static Connection getConnection() {
         Connection conn = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");// nap driver, tai driver MySQL connect vao bo nhe
+            //load driver, load MySQL connect driver into memory
+            Class.forName("com.mysql.cj.jdbc.Driver");//
             conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);// thiet lap ket noi
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -42,10 +43,12 @@ public class JDBCUtils {
             }
         }
     }
-    public static Date getSQLDate(LocalDate localDate){// chuyen localDate thang SQLDate
+    // convert localdate to SQLdate
+    public static Date getSQLDate(LocalDate localDate){
         return Date.valueOf(localDate);
     }
-    public static LocalDate getUtilDate(Date sqlDate) {// chuyen SQLDate thang localDate
+    // convert  SQLDate to LocalDate
+    public static LocalDate getUtilDate(Date sqlDate) {
         return sqlDate.toLocalDate();
     }
 }
